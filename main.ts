@@ -1,3 +1,11 @@
+input.onButtonPressed(Button.A, function () {
+    wuKong.setAllMotor(200, -200)
+    basic.pause(500)
+    wuKong.stopAllMotor()
+    wuKong.setAllMotor(200, 200)
+    basic.pause(500)
+    wuKong.stopAllMotor()
+})
 radio.onReceivedValue(function (name, value) {
     comment.comment("DO NOT CHANGE!")
     if (name == "x") {
@@ -38,6 +46,9 @@ basic.showString("R")
 basic.forever(function () {
     if (action == "A") {
         comment.comment("Insert A-Button Action Between These Comments")
+        wuKong.setAllMotor(200, -200)
+        basic.pause(500)
+        wuKong.stopAllMotor()
         comment.comment("Insert A-Button Action Between These Comments")
         action = "Z"
     } else if (action == "B") {
